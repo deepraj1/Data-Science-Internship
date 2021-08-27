@@ -1,0 +1,114 @@
+---
+title: "Group G"
+author: "Kuldeep | Sumit | Tanuja | Vivek"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE, echo=FALSE}
+library(shiny)
+library(shinythemes)
+library(datasets)
+library(dplyr)
+library(plotrix)
+library(ggplot2)
+library(readxl)
+library(tinytex)
+data <- read.csv("caste_names_1.csv")
+data2 <- read.csv("caste_names_2.csv")
+data1 <- read.csv("booth.csv")
+```
+
+\newpage
+## MAJOR FINDINGS
+
+1. Since the data was very poorly organized, we used our ground knowledge and contacted some people to clean our data after that we can analyse the data very well and make observations more accurately.
+2. Anwar Ali was major vote-cutter for INC in 2018 Vidhan Sabha Elections since he got around 3200 votes and difference between BJP(winner) and INC(runner up) was around 2300 votes.
+3. After analysing surnames in 53 Areas, we can say that around 34000 people are Muslims, around 27500 people are Singh, around 26000 Kumar, around 12000 are Jat, around 11000 are Savrna and around 7000 are Dalits.
+
+\pagebreak
+\newpage
+## ACTION POINTS FOR INC
+
+1. In 2018 General Vidhan Sabha elections INC lost majority votes to Anwar Ali(BSP) which impacted INC’s campaign very deeply. In later elections INC got the votes back again
+    * In the following booths Anwar impacted INC most - 111(Kyamsar), 48(Alsisar), 113(Dhanuri), 68(Bissau),182(Mojas), 198(Bhimsar), 173(Sekhsar), 7(Jabasar), 137(Tani). 
+    * So they should campaign in these booths firmly focused on the Muslim population, which swung to other Muslim candidates.
+    
+2. In some booths their are swing voters which votes both BJP, INC regularly so they should focus more on these booths and it’s population.
+    * Following are the areas which swung most in recent elections in favor of INC - Mandawa, Bissau, Malsisar, Nua, Tani.
+    * Following are the areas in which voters swung away from INC in recent elections - Ranjitpura, Bas Kaliyasar, Jalimpura, Sigda, Naya Bas(Dhanuri).
+    * So INC can try to influence both of the type of voters so that those who swung in their favour can vote them in the future elections and those who swung away can come back to them.
+3. INC should focus on new voters as they can also be considered swing voters for many different reasons. After analysing the vote share of INC in comparison to the number of new voters in the booth, we can observe that INC’s vote share increases when the number of new voters increases.
+
+\pagebreak
+\newpage
+## ACTION POINTS FOR BJP
+1. In 2018 General Vidhan Sabha elections INC lost majority votes to Anwar Ali(BSP) which impacted INC’s campaign very deeply. In later elections INC got the votes back again.
+    * So BJP can try to stand a local Muslim candidate from these booths which will impact INC hugely and can cost them the election(seat).
+    * BJP can also try to influence the Muslim population in these booths.
+    * In the following booths Anwar impacted INC most - 111(Kyamsar), 48(Alsisar), 113(Dhanuri), 68(Bissau), 182(Mojas), 198(Bhimsar), 173(Sekhsar), 7(Jabasar), 137(Tani). 
+
+2. In some booths their are swing voters which votes both BJP, INC regularly so they should focus more on these booths and it’s population.
+    * Following are the areas which swung most in recent elections in favor of BJP - Mandawa, Malsisar, Bissau, Tamkor, Alsisar.
+    * Following are the areas in which voters swung away from BJP in recent elections - Jabasar, Govindpura, Rijani, Kaliyasar, Siriyasar Khurd.
+    * So BJP can try to influence both of the type of voters so that those who swung in their favour can vote them in the future elections and those who swung away can come back to them.
+
+3. BJP should focus on new voters as they can also be considered swing voters for many different reasons. After analysing the vote share of BJP in comparison to the number of new voters in the booth, we can observe that BJP’s vote share decreases when the number of new voters increases. So it becomes more critical to BJP to focus on new voters than INC since INC is already benefitting from their policies.
+
+
+\pagebreak
+
+
+## Core Voters and Swing Voters Area-wise.
+```{r echo=FALSE, results='asis'}
+library(knitr)
+kable(data1)
+```
+For core voters - First, we find the lowest percentage votes gained by respective parties in all four elections, and then we tried to find the core voters caste-wise according to that percentage; we also used some ground knowledge by asking which caste could have voted for which party.
+And the remaining voters we can describe as swing voters.
+
+\pagebreak
+
+
+\newpage
+## Finding The surnames
+1. Since the data was very poorly organized, we used our ground knowledge and contacted some people to clean our data.
+2. It is the most difficult and time consumable part of our analysis 
+3. Because by looking the surname of the head of the family is not good enough 
+4. Because most of the head of family members have the same surname like Kumar, Ram, Lal, etc.
+5. So, for finding the surnames we first go with the surnames that we sure about
+6. After the first go, we got around 62% of surnames
+7. After that, we assign surnames like Ram, Lal, Kumar, and Singh if all family members have the same surname or not having a surname
+8. Then we found around 70% of surnames
+9. Many of the families have no surname
+10. To tackle this problem we first find the surname of the whole section(Anubhag) by looking at the name of the section(Anubhag) and assign that surname to these families
+11. Then we got around 85% surname
+12. After remaining surname, we assign the neighbors surname
+13. By going through all the steps we are assuring that **accuracy is 80-90%**
+
+\pagebreak
+
+\newpage
+## Caste that belongs to different communities
+
+```{r echo=FALSE, results='asis'}
+library(knitr)
+kable(data)
+```
+
+\pagebreak
+
+\newpage
+## Caste that belongs to different communities
+
+```{r echo=FALSE, results='asis'}
+library(knitr)
+kable(data2)
+```
